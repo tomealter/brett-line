@@ -1,9 +1,13 @@
 html {
+  color: $black;
   font-family: $base-font;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-
+  margin: 0;
+  padding: 0;
 }
 
 a {
@@ -16,23 +20,34 @@ p {
 
 // HEADINGS
 h1 {
-
+  color: $teal;
+  font-family: $header-font;
+  font-weight: 700;
+  margin-top: 0;
 }
 
 h2 {
-
+  color: $teal;
+  font-family: $header-font;
+  font-weight: 700;
+  margin-top: 0;
 }
 
 h3 {
-
+  color: $teal;
+  font-family: $header-font;
+  font-weight: 700;
+  margin-top: 0;
 }
 
 h4 {
-
+  font-family: $header-font;
+  margin-top: 0;
 }
 
 h5 {
-
+  font-family: $header-font;
+  margin-top: 0;
 }
 
 
