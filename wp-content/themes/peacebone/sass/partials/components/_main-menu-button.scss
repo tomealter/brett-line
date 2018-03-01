@@ -1,0 +1,13 @@
+.main-menu-button {
+  @include svg-background(hamburger);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  height: 36px;
+  position: fixed;
+  right: 1.5em;
+  top: 1.5em;
+  width: 40px;
+  z-index: 9;
+}
