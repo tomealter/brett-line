@@ -1,0 +1,29 @@
+.featured-text {
+  color: $grey-med;
+  font-family: $header-font;
+  font-size: $font-size-lg;
+  font-weight: 700;
+  padding: $spacing-xl 0;
+  position: relative;
+  text-align: center;
+
+  @include pseudoblock(before, block) {
+    position: absolute;
+    width: 100px;
+    height: 1px;
+    top: 60px;
+    left: calc(50% + 8px);
+    transform: translateX(-50%);
+    background-color: $grey-med;
+  }
+
+  @include pseudoblock(after, block) {
+    position: absolute;
+    width: 100px;
+    height: 1px;
+    top: 70px;
+    left: calc(50% - 8px);
+    transform: translateX(-50%);
+    background-color: $grey-med;
+  }
+}
