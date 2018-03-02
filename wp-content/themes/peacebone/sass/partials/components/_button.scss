@@ -1,0 +1,13 @@
+.button {
+  border: solid 1px $grey-med;
+  color: $grey-med;
+  display: inline-block;
+  padding: .8em 2em;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $teal;
+    border: solid 1px $teal;
+    color: #ffffff;
+  }
+}

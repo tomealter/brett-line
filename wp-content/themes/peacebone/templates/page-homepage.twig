@@ -1,11 +1,24 @@
 {% extends "base.twig" %}
 
 {% block content %}
+
+  {# Hero #}
   {% include "partials/hero.twig" %}
 
+  {# Featured Text #}
   <div class="l-constrain l-constrain--narrow">
     {% include "partials/featured-text.twig" with {
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum congue leo eget malesuada."
     }%}
   </div>
+
+  {# Stacked Cards #}
+  <div class="l-constrain">
+    {% include "partials/card-stacked.twig" %}
+    {% include "partials/card-stacked.twig" with {
+      custom_classes: "is-reversed"
+    }%}
+  </div>
+
+
 {% endblock %}

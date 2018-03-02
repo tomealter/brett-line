@@ -1,0 +1,138 @@
+.card--stacked {
+  margin-bottom: $spacing-xl;
+  position: relative;
+  width: 100%;
+
+  .card__media {
+    display: block;
+    position: relative;
+    width: 90%;
+    z-index: 1;
+    
+    &:after {
+      border: solid 1px $grey-light;
+      content: '';
+      display: block;
+      height: 100%;
+      left: 38px;
+      position: absolute;
+      top: 18px;
+      width: calc(100% - 20px);
+      z-index: 2;
+    }
+
+    @include pseudoblock(before, block) {
+      background-color: $teal;
+      height: 100%;
+      left: 0;
+      opacity: .4;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 1;
+    }
+  }
+
+  .card__image {
+    display: block;
+    width: 100%;
+  }
+
+  .card__content {
+    background-color: #fff;
+    bottom: -50px;
+    padding: 1.5em 2em 2em 2em;
+    position: absolute;
+    right: 0;
+    width: 400px;
+    z-index: 2;
+    
+    &:before {
+      border: solid 1px $grey-light;
+      content: '';
+      display: block;
+      height: 100%;
+      left: 0;
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 1;
+    }
+    
+    &:after {
+      background-color: #fff;
+      content: '';
+      display: block;
+      height: 100%;
+      left: -20px;
+      position: absolute;
+      top: -20px;
+      width: 100%;
+      z-index: -1;
+    }
+  }
+
+  .card__title {
+    font-size: $font-size-xl;
+    font-weight: 700;
+    margin-bottom: .5em;
+    margin-top: 0;  
+
+    @include pseudoblock(after, block) {
+      width: 100px;
+      height: 2px;
+      background-color: $teal;
+      margin: 18px 0;
+    }
+  }
+
+  .card__description {
+    color: $grey-med;
+    line-height: 1.6;
+    margin-bottom: 2.5em;
+  }
+
+  .card__media-type {
+    color: #ffffff;
+    display: block;
+    font-family: $header-font;
+    font-size: $font-size-sm;
+    font-style: italic;
+    left: -7px;
+    position: absolute;
+    text-align: right;
+    top: 15px;
+    transform: rotate(-90deg) translate(-50%, -100%);
+    z-index: 2;
+  }
+}
+
+//Reversed Stacked Card
+.card--stacked {
+  &.is-reversed {
+
+    .card__media {
+      left: 10%;
+
+      &:after {
+        left: -20px;
+      }
+    }
+
+    .card__content {
+      right: initial;
+      left: 0;
+
+      &:after {
+        left: 22px;
+      }
+    }
+
+    .card__media-type {
+      right: -6px;
+      left: initial;
+      transform: rotate(90deg) translate(50%, -100%);
+    }
+  }
+}
