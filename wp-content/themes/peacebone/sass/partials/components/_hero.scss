@@ -1,5 +1,7 @@
 .hero {
   position: relative;
+  max-width: 100%;
+  overflow: hidden;
   
   &:after {
     content: '';
@@ -40,9 +42,9 @@
   background-repeat: no-repeat;
   background-size: contain;
   display: block;
-  height: 175px;
+  height: 165px;
   margin: 0 auto 2em;
-  width: 280px;
+  width: 260px;
 
   @include breakpoint(600px) {
     height: 240px;
@@ -63,7 +65,7 @@
   span {
     display: block;
     font-family: 'Poppins';
-    font-size: 1.3em;
+    font-size: 21px;
     font-weight: 200;
     line-height: 1.5;
     text-align: left;

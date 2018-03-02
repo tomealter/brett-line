@@ -1,10 +1,14 @@
 html {
   color: $black;
   font-family: $base-font;
-  font-size: $base-font-size;
+  font-size: $font-size-sm;
   font-weight: 300;
   margin: 0;
   padding: 0;
+
+  @include breakpoint(700px) {
+    font-size: $base-font-size;
+  }
 }
 
 body {
@@ -24,15 +28,25 @@ p {
 h1 {
   color: $teal;
   font-family: $header-font;
+  font-size: $font-size-lg;
   font-weight: 700;
   margin-top: 0;
+
+  @include breakpoint($bp-font-change) {
+    font-size: $font-size-xl;
+  }
 }
 
 h2 {
   color: $teal;
   font-family: $header-font;
+  font-size: $font-size-md;
   font-weight: 700;
   margin-top: 0;
+
+  @include breakpoint($bp-font-change) {
+    font-size: $font-size-lg;
+  }
 }
 
 h3 {

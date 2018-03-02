@@ -1,7 +1,7 @@
 .featured-text {
   color: $grey-med;
   font-family: $header-font;
-  font-size: $font-size-lg;
+  font-size: $font-size-md;
   font-weight: 700;
   padding: $spacing-xl 0;
   position: relative;
@@ -11,7 +11,7 @@
     position: absolute;
     width: 100px;
     height: 1px;
-    top: 60px;
+    top: 70px;
     left: calc(50% + 8px);
     transform: translateX(-50%);
     background-color: $grey-med;
@@ -21,9 +21,13 @@
     position: absolute;
     width: 100px;
     height: 1px;
-    top: 70px;
+    top: 80px;
     left: calc(50% - 8px);
     transform: translateX(-50%);
     background-color: $grey-med;
+  }
+
+  @include breakpoint(700px) {
+    font-size: $font-size-lg;
   }
 }
