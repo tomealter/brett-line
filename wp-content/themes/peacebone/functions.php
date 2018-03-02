@@ -61,10 +61,16 @@ class StarterSite extends TimberSite {
 
 function add_theme_scripts() {
 	
-	 wp_enqueue_style( 'styles', get_template_directory_uri() . '/css/styles.css', array(), '1.1', 'all');
-	 wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', array ( 'jquery' ), 1.1, true);
-	 wp_enqueue_script( 'script', get_template_directory_uri() . '/js/jquery.vide.js', array ( 'jquery' ), 1.1, true);
- }
- add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
+	wp_enqueue_style( 'styles', get_template_directory_uri() . '/css/styles.css', array(), '1.1', 'all');
+
+	wp_register_script( 'scripts', get_template_directory_uri() . '/js/scripts.js', array ('jquery'), '1.1', true);
+	wp_enqueue_script('scripts');
+
+	wp_register_script( 'vide', get_template_directory_uri() . '/js/jquery.vide.min.js', array ('jquery'), '1.1', true);
+	wp_enqueue_script('vide');
+
+}
+
+add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
 
 new StarterSite();
