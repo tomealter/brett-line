@@ -1,9 +1,12 @@
 .featured-text {
+  padding: $spacing-xl 0;
+}
+
+.featured-text__content {
   color: $grey-med;
   font-family: $header-font;
   font-size: $font-size-med;
   font-weight: 700;
-  padding: $spacing-xl 0;
   position: relative;
   text-align: center;
 
@@ -11,7 +14,7 @@
     position: absolute;
     width: 100px;
     height: 1px;
-    top: 80px;
+    top: -40px;
     left: calc(50% + 8px);
     transform: translateX(-50%);
     background-color: $grey-med;
@@ -21,7 +24,7 @@
     position: absolute;
     width: 100px;
     height: 1px;
-    top: 90px;
+    top: -30px;
     left: calc(50% - 8px);
     transform: translateX(-50%);
     background-color: $grey-med;

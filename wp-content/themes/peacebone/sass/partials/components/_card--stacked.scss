@@ -28,7 +28,7 @@ $bp-card-stacked: 1000px;
       background-color: $teal;
       height: 100%;
       left: 0;
-      opacity: .4;
+      opacity: .3;
       position: absolute;
       top: 0;
       width: 100%;
@@ -42,7 +42,12 @@ $bp-card-stacked: 1000px;
   }
 
   .card__image {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: block;
+    height: 0;
+    padding-top: 56.25%;
     width: 100%;
   }
 
