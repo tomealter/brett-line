@@ -107,7 +107,7 @@ $bp-card-stacked: 1000px;
   }
 
   .card__title {
-    font-size: $font-size-lg;
+    font-size: $font-size-med;
     font-weight: 700;
     margin-bottom: .4em;
     margin-top: 0;  
@@ -120,7 +120,7 @@ $bp-card-stacked: 1000px;
     }
 
     @include breakpoint(700px) {
-      font-size: $font-size-xl;
+      font-size: $font-size-lg;
     }
   }
 
@@ -133,14 +133,15 @@ $bp-card-stacked: 1000px;
   .card__media-type {
     color: #ffffff;
     display: block;
-    font-family: $header-font;
-    font-size: 18px;
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
     font-style: italic;
-    left: -7px;
+    left: -55px;
     position: absolute;
     text-align: right;
-    top: 15px;
-    transform: rotate(-90deg) translate(-50%, -100%);
+    top: 90px;
+    transform: rotate(-90deg);
+    width: 150px;
     z-index: 2;
   }
 }
@@ -169,9 +170,11 @@ $bp-card-stacked: 1000px;
       }
 
       .card__media-type {
-        right: -6px;
+        right: -27px;
         left: initial;
+        text-align: left;
         transform: rotate(90deg) translate(50%, -100%);
+        top: 15px;
       }
     }
   }

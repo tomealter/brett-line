@@ -1,0 +1,12 @@
+// Social Menu
+$social-media-list: "facebook", "twitter", "linkedin", "vimeo", "youtube";
+
+@each $social-media in $social-media-list {
+  
+  .#{$social-media} {
+    @include svg-background(social-#{$social-media});
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
