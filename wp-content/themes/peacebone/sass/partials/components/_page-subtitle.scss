@@ -1,0 +1,10 @@
+.page-subtitle {
+  margin: $spacing-med 0 $spacing-lg;
+  font-size: $base-font-size;
+  color: $grey-med;
+  font-weight: 200;
+
+  &.page-subtitle--large {
+    font-size: 28px; 
+  }
+}

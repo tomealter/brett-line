@@ -1,0 +1,21 @@
+.page-title {
+  color: $teal;
+  font-family: $header-font;
+  font-size: $font-size-xl;
+  font-weight: 700;
+  margin: $spacing-lg 0 $spacing-med;
+  position: relative;
+
+  &.page-title--large {
+    font-size: $font-size-xxl; 
+  }
+}
+
+.page-title__letter {
+  color: #eee;
+  font-size: 310px;
+  line-height: 1;
+  position: absolute;
+  top: -70px;
+  z-index: -1;
+}

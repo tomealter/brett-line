@@ -1,0 +1,22 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+  <div class="l-constrain">
+
+    {# Page Title #}
+    {% include "partials/page-title.twig" with {
+      title: "Photography",
+      custom_classes: "page-title--large"
+    }%}
+
+    {# Page Subtitle #}
+    {% include "partials/page-subtitle.twig" with {
+      subtitle: "Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Donec rutrum congue leo eget malesuada. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.",
+      custom_classes: "page-subtitle--large"
+    }%}
+
+
+  </div>
+
+{% endblock %}
