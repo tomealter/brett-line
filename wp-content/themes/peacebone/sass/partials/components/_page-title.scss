@@ -1,13 +1,22 @@
 .page-title {
   color: $teal;
   font-family: $header-font;
-  font-size: $font-size-xl;
+  font-size: $font-size-lg;
   font-weight: 700;
   margin: $spacing-lg 0 $spacing-med;
   position: relative;
 
+  @include breakpoint(600px) {
+    font-size: $font-size-xl; 
+  }
+
   &.page-title--large {
-    font-size: $font-size-xxl; 
+
+    
+
+    @include breakpoint(800px) {
+      font-size: $font-size-xxl; 
+    }
   }
 }
 

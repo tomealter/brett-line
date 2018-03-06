@@ -4,18 +4,26 @@
 
   <div class="l-constrain">
 
-    {# Page Title #}
+    <!-- Page Title -->
     {% include "partials/page-title.twig" with {
       title: "Photography",
       custom_classes: "page-title--large"
     }%}
 
-    {# Page Subtitle #}
+    <!-- Page Subtitle -->
     {% include "partials/page-subtitle.twig" with {
       subtitle: "Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Donec rutrum congue leo eget malesuada. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.",
       custom_classes: "page-subtitle--large"
     }%}
 
+    <!-- Media List -->
+    {% include "partials/media-list.twig" %}
+
+    <!-- Media Navigation -->
+    {% include "partials/nav-media.twig" with {
+      left_link: "Film",
+      right_link: "Graphics"
+    }%}
 
   </div>
 

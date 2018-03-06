@@ -1,0 +1,81 @@
+$bp-nav-media: 600px;
+
+.nav--media {
+  align-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: $spacing-lg 0 $spacing-xl 0;
+
+  .nav__item {
+    color: $teal;
+    display: block;
+    flex-basis: 100%;
+    font-family: $header-font;
+    font-size: $font-size-med;
+    font-weight: 700;
+    margin-bottom: .5em;
+    max-width: 100%;
+    text-align: center;
+    text-decoration: none;
+
+    @include breakpoint(360px) {
+      flex-basis: auto;
+      max-width: auto;
+      text-align: left;
+      margin-bottom: 0;
+    }
+
+    @include breakpoint($bp-nav-media) {
+      font-size: $font-size-lg;
+    }
+
+    &:first-child {
+
+      @include breakpoint(360px) {
+        border-right: solid 1px $teal;
+        margin-right: .5em;
+        padding-right: .5em;
+      }
+
+      @include pseudoblock(before, inline-block) {
+        @include svg-background(chevron-left-teal);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 10px;
+        height: 24px;
+        margin-right: 20px;
+
+        @include breakpoint($bp-nav-media) {
+          height: 36px;
+          width: 14px;
+        }
+      }
+
+      @include breakpoint($bp-nav-media) {
+        margin-right: 1em;
+        padding-right: 1em;
+      }
+    }
+
+    &:last-child {
+
+      @include pseudoblock(after, inline-block) {
+        @include svg-background(chevron-right-teal);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 24px;
+        margin-left: 20px;
+        width: 10px;
+
+        @include breakpoint($bp-nav-media) {
+          height: 36px;
+          width: 14px;
+        }
+      }
+    }
+  }
+}

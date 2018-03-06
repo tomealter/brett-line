@@ -5,6 +5,8 @@
   font-weight: 200;
 
   &.page-subtitle--large {
-    font-size: 28px; 
+    @include breakpoint(700px) {
+      font-size: 28px; 
+    }
   }
 }
