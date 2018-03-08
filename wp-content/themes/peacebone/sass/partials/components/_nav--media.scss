@@ -6,7 +6,11 @@ $bp-nav-media: 600px;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin: $spacing-lg 0 $spacing-xl 0;
+  margin: $spacing-lg 0;
+
+  @include breakpoint(600px) {
+    margin: $spacing-xl 0;
+  }
 
   .nav__item {
     color: $teal;
@@ -47,10 +51,19 @@ $bp-nav-media: 600px;
         width: 10px;
         height: 24px;
         margin-right: 20px;
+        opacity: 0;
+        transition: all 500ms ease-out;
 
         @include breakpoint($bp-nav-media) {
           height: 36px;
           width: 14px;
+        }
+      }
+
+      &:hover {
+        &:before {
+          transform: translateX(-10px);
+          opacity: 1;
         }
       }
 
@@ -69,11 +82,20 @@ $bp-nav-media: 600px;
         background-size: contain;
         height: 24px;
         margin-left: 20px;
+        opacity: 0;
+        transition: all 500ms ease-out;
         width: 10px;
 
         @include breakpoint($bp-nav-media) {
           height: 36px;
           width: 14px;
+        }
+      }
+
+      &:hover {
+        &:after {
+          transform: translateX(10px);
+          opacity: 1;
         }
       }
     }

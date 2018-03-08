@@ -1,0 +1,21 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+  <div class="l-constrain l-constrain--narrow">
+
+    {% include "partials/page-title.twig" with {
+      title: post.title
+    }%}
+
+    {% include "partials/page-subtitle.twig" with {
+      subtitle: post.film_description
+    }%}
+
+    {{ post.film_embed }}
+
+  </div>
+
+  
+
+{% endblock %}
