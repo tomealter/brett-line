@@ -1,0 +1,51 @@
+.main-menu {
+  display: flex;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 8;
+  background-color: #fff;
+}
+
+.main-menu__left {
+  flex-basis: 45%;
+  max-width: 45%;
+  height: 100%;
+  display: block;
+  position: relative;
+  padding: 0 20px;
+}
+
+.main-menu__right {
+  flex-basis: 55%;
+  max-width: 55%;
+  height: 100%;
+  display: block;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+
+  @include pseudoblock(after, block) {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to right, rgba(#000, .5), rgba(#000, 0));
+  }
+}
+
+.main-menu__logo {
+  @include svg-background(brett-line-logo);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 206px;
+  width: 326px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 25px;
+  z-index: 1;
+}
