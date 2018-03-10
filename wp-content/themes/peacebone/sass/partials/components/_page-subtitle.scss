@@ -1,10 +1,12 @@
 .page-subtitle {
   margin: $spacing-med 0 $spacing-lg;
   font-size: $base-font-size;
-  color: $grey-med;
+  color: $grey-dark;
   font-weight: 200;
 
   &.page-subtitle--large {
-    font-size: 28px; 
+    @include breakpoint(700px) {
+      font-size: 28px; 
+    }
   }
 }
