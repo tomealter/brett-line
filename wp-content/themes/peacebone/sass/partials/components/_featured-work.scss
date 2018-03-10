@@ -1,11 +1,11 @@
-$bp-card-stacked: 1000px;
+$bp-featured-work: 1000px;
 
-.card--stacked {
+.featured-work {
   margin-bottom: $spacing-xl;
   position: relative;
   width: 100%;
 
-  .card__media {
+  .featured-work__media {
     display: block;
     margin-bottom: $spacing-med;
     position: relative;
@@ -35,13 +35,13 @@ $bp-card-stacked: 1000px;
       z-index: 1;
     }
 
-    @include breakpoint($bp-card-stacked) {
+    @include breakpoint($bp-featured-work) {
       width: 90%;
       margin-bottom: 0;
     }
   }
 
-  .card__image {
+  .featured-work__image {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -51,13 +51,13 @@ $bp-card-stacked: 1000px;
     width: 100%;
   }
 
-  .card__content {
+  .featured-work__content {
     background-color: #fff;
     position: relative;
     transition: all 400ms ease-out;
     z-index: 2;
 
-    @include breakpoint($bp-card-stacked) {
+    @include breakpoint($bp-featured-work) {
       bottom: -50px;
       padding: 1.5em 2em 2em 2em;
       position: absolute;
@@ -111,7 +111,7 @@ $bp-card-stacked: 1000px;
     }
   }
 
-  .card__title {
+  .featured-work__title {
     font-size: $font-size-med;
     font-weight: 700;
     margin-bottom: .4em;
@@ -129,13 +129,13 @@ $bp-card-stacked: 1000px;
     }
   }
 
-  .card__description {
-    color: $grey-med;
+  .featured-work__description {
+    color: $grey-dark;
     line-height: 1.6;
     margin-bottom: 1.6em;
   }
 
-  .card__media-type {
+  .featured-work__media-type {
     color: #ffffff;
     display: block;
     font-family: "Playfair Display", serif;
@@ -152,12 +152,12 @@ $bp-card-stacked: 1000px;
 }
 
 //Reversed Stacked Card
-.card--stacked {
+.featured-work {
   &.is-reversed {
 
-    @include breakpoint($bp-card-stacked) {
+    @include breakpoint($bp-featured-work) {
 
-      .card__media {
+      .featured-work__media {
         left: 10%;
 
         &:after {
@@ -165,7 +165,7 @@ $bp-card-stacked: 1000px;
         }
       }
 
-      .card__content {
+      .featured-work__content {
         right: initial;
         left: 0;
 
@@ -174,7 +174,7 @@ $bp-card-stacked: 1000px;
         }
       }
 
-      .card__media-type {
+      .featured-work__media-type {
         right: -27px;
         left: initial;
         text-align: left;

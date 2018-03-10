@@ -10,20 +10,20 @@
   {# Featured Text #}
   <div class="l-constrain l-constrain--narrow">
     {% include "partials/featured-text.twig" with {
-      text: post.get_field('featured_text')
+      text: post.featured_text
     }%}
   </div>
 
   {# Stacked Cards #}
   <div class="l-constrain">
-    {% include "partials/card-stacked.twig" with {
+    {% include "partials/featured-work.twig" with {
       title: "Vivamus Magna Justo",
       description: "Sed porttitor lectus nibh. Donec rutrum congue leo eget malesuada. Cras ultricies ligula sed magna dictum porta.",
       media_type: "Film",
       image: "http://picsum.photos/900/540"
     }%}
 
-    {% include "partials/card-stacked.twig" with {
+    {% include "partials/featured-work.twig" with {
       custom_classes: "is-reversed",
       title: "Cras Ultricies Ligula sed Magna",
       description: "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Sed porttitor lectus nibh.",
@@ -31,7 +31,7 @@
       image: "http://picsum.photos/900/541"
     }%}
 
-    {% include "partials/card-stacked.twig" with {
+    {% include "partials/featured-work.twig" with {
       title: "Quisque Velit nisi Pretium",
       description: "Donec rutrum congue leo eget malesuada. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.",
       media_type: "Graphic",
