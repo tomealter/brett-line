@@ -69,6 +69,8 @@ function add_theme_scripts() {
 	wp_register_script( 'vide', get_template_directory_uri() . '/js/jquery.vide.min.js', array ('jquery'), '1.1', true);
 	wp_enqueue_script('vide');
 
+	wp_register_script( 'scrollmagic', get_template_directory_uri() . '/js/ScrollMagic.min.js', true);
+	wp_enqueue_script('scrollmagic');
 }
 
 add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );

@@ -1,5 +1,5 @@
 .main-menu-button {
-  @include svg-background(hamburger);
+  @include svg-background(hamburger-teal);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -10,4 +10,16 @@
   top: 1.5em;
   width: 40px;
   z-index: 9;
+
+  &.is-active {
+    @include svg-background(close);
+  }
+
+  &.is-white {
+    @include svg-background(hamburger);
+
+    &.is-active {
+      @include svg-background(close);
+    }
+  }
 }

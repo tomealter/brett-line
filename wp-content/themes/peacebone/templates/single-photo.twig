@@ -9,12 +9,10 @@
     }%}
 
     {% include "partials/page-subtitle.twig" with {
-      subtitle: post.film_description
+      subtitle: post.photography_description
     }%}
 
-    {% include "partials/video.twig" with {
-      video: post.film_embed
-    }%}
+    {{ post.photography_images }}
     
 
   </div>

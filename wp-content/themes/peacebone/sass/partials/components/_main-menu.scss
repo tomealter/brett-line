@@ -3,6 +3,7 @@
   height: 100%;
   left: 0;
   overflow: hidden;
+  pointer-events: none;
   position: fixed;
   top: 0;
   width: 100%;
@@ -26,7 +27,7 @@
   padding: 0 20px;
   position: relative;
   transform: translateX(-100%);
-  transition: all 500ms ease-out;
+  transition: all 350ms ease-out;
 }
 
 .main-menu__right {
@@ -39,7 +40,7 @@
   max-width: 55%;
   position: relative;
   transform: translateX(100%);
-  transition: all 500ms ease-out;
+  transition: all 350ms ease-out;
 
   @include pseudoblock(after, block) {
     background-image: linear-gradient(to right, rgba(#000, .5), rgba(#000, 0));

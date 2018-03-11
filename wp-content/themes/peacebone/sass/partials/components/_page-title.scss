@@ -10,19 +10,36 @@
     font-size: $font-size-xl; 
   }
 
+  @include pseudoblock(after, block) {
+    background-color: $teal;
+    height: 2px;
+    margin-top: 0.3em;
+    width: 100px;
+  }
+
+  // Large Page Title Styles
   &.page-title--large {
 
-    @include breakpoint(800px) {
+    @include breakpoint(900px) {
       font-size: $font-size-xxl; 
+    }
+
+    &:after {
+      display: none;
     }
   }
 }
 
 .page-title__letter {
   color: #f2f2f2;
+  display: none;
   font-size: 310px;
   line-height: 1;
   position: absolute;
   top: -70px;
   z-index: -1;
+
+  .page-title--large & {
+    display: block;
+  }
 }
