@@ -9,12 +9,12 @@
     }%}
 
     {% include "partials/page-subtitle.twig" with {
-      subtitle: post.photography_description
+      subtitle: post.graphic_description
     }%}
 
     <div class="gallery">
       <div class="gallery__row">
-        {% for image in post.get_field('photography_gallery') %}
+        {% for image in post.get_field('graphic_gallery') %}
           <div class="flex-column">
             <div class="gallery__item" style="background-image: url({{ image.url|resize(450, 450) }})"></div>
           </div>

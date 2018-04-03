@@ -17,7 +17,19 @@
     }%}
 
     <!-- Media List -->
-    {% include "partials/media-list.twig" %}
+    <div class="media-list">
+      <div class="flex-grid flex-grid--3-col">
+        {% for item in photography %}
+          <div class="flex-column">
+            {% include "partials/card.twig" with {
+              image: item.thumbnail,
+              title: item.title,
+              url: item.link
+            }%}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
 
     <!-- Media Navigation -->
     {% include "partials/nav-media.twig" with {

@@ -24,4 +24,11 @@
 $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
+
+$photography_args = array(
+  'post_type' => 'photo'
+  //'orderby' => 'ASC'
+);
+$context['photography'] = Timber::get_posts( $photography_args );
+
 Timber::render( array( 'page-' . $post->post_name . '.twig', 'page.twig' ), $context );

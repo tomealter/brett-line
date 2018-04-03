@@ -13,12 +13,10 @@
     }%}
 
     {% include "partials/video.twig" with {
-      video: post.film_embed
+      video: post.get_field('film_embed')
     }%}
+
     
-
   </div>
-
-  
 
 {% endblock %}
