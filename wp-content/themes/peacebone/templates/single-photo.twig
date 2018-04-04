@@ -12,6 +12,13 @@
       subtitle: post.photography_description
     }%}
 
+    <div class="section padded--med">
+      <div class="fancy-media">
+        <img src="{{ TimberImage(post.photography_featured_image).src }}" />
+      </div>
+      
+    </div>
+
     <div class="gallery">
       <div class="gallery__row">
         {% for image in post.get_field('photography_gallery') %}
@@ -22,6 +29,25 @@
       </div>
     </div>
     
+  </div>
+
+  {# Explore other photos #}
+  <div class="section section--teal padded--lg">
+    <div class="l-constrain l-constrain--narrow">
+      <h3 class="section__title section__title--white">Explore Other Photographs</h3>
+      <div class="flex-grid flex-grid--2-col">
+        {% for item in related_photos %}
+          <div class="flex-column">
+            {% include "partials/card.twig" with {
+              image: item.thumbnail,
+              title: item.title,
+              url: item.link,
+              custom_class: "card--white"
+            }%}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
   </div>
 
   

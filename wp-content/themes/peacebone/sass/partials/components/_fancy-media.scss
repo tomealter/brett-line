@@ -1,0 +1,8 @@
+.fancy-media {
+  @include fancy-media;
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+}

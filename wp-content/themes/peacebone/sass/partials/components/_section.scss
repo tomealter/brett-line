@@ -1,0 +1,54 @@
+.section {
+  &.padded {
+    padding: $spacing 0;
+  }
+
+  &.padded--med {
+    padding: $spacing-med 0;
+  }
+
+  &.padded--lg {
+    padding: $spacing-lg 0;
+  }
+
+  // Padding Top
+  &.padded-top {
+    padding-top: $spacing;
+  }
+
+  &.padded-top--med {
+    padding-top: $spacing-med;
+  }
+
+  &.padded-top--lg {
+    padding-top: $spacing-lg;
+  }
+
+  // Padding Bottom
+  &.padded-bot {
+    padding-bottom: $spacing;
+  }
+
+  &.padded-bot--med {
+    padding-bottom: $spacing-med;
+  }
+
+  &.padded-bot--lg {
+    padding-bottom: $spacing-lg;
+  }
+
+  &.section--teal {
+    background-color: $teal;
+  }
+}
+
+.section__title {
+  font-family: $base-font;
+  margin-bottom: 1.5em;
+  text-align: center;
+  text-transform: uppercase;
+
+  &.section__title--white {
+    color: #ffffff;
+  }
+}

@@ -6,6 +6,7 @@
   padding-top: 80%;
   position: relative;
   width: 100%;
+  z-index: 1;
   
   &:hover {
     .card__image:after {
@@ -18,15 +19,11 @@
     }
     
     .card__borders {
-      //left: -10px;
       opacity: 1;
-      //top: -10px;
       transform: translate(-10px, -10px);
       
       &:after {
-        //left: 21px;
         opacity: 1;
-        //top: 21px;
         transform: translate(21px, 21px);
       }
     }
@@ -104,5 +101,34 @@
   @include breakpoint(900px) {
     left: -1em;
     opacity: 0;
+  }
+}
+
+// White Cards
+.card.card--white {
+  border: solid 4px #fff;
+
+  .card__borders {
+    border-color: #fff;
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+    top: -4px;
+    left: -4px;
+
+    &:after {
+      border-color: #fff;
+    }
+  }
+
+  &:hover {
+    .card__borders {
+      opacity: 1;
+      transform: translate(-10px, -10px);
+      
+      &:after {
+        opacity: 1;
+        transform: translate(21px, 21px);
+      }
+    }
   }
 }

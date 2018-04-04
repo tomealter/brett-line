@@ -1,0 +1,25 @@
+@mixin fancy-media {
+  border: solid 8px $teal;
+  z-index: 1;
+  position: relative;
+
+  @include pseudoblock(before, block) {
+    height: calc(100% + 10px);
+    width: calc(100% + 10px);
+    border: solid 1px $teal;
+    left: -18px;
+    top: -18px;
+    position: absolute;
+    z-index: -1;
+  }
+
+  @include pseudoblock(after, block) {
+    height: calc(100% + 10px);
+    width: calc(100% + 10px);
+    border: solid 1px $teal;
+    right: -18px;
+    bottom: -18px;
+    position: absolute;
+    z-index: -1;
+  }
+}

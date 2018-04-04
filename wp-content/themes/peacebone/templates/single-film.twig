@@ -1,7 +1,6 @@
 {% extends "base.twig" %}
 
 {% block content %}
-
   <div class="l-constrain l-constrain--narrow">
 
     {% include "partials/page-title.twig" with {
@@ -12,11 +11,31 @@
       subtitle: post.film_description
     }%}
 
-    {% include "partials/video.twig" with {
-      video: post.get_field('film_embed')
-    }%}
-
-    
+    <div class="section padded-top--med padded-bot--lg">
+      {% include "partials/video.twig" with {
+        video: post.get_field('film_embed'),
+        custom_class: "fancy-media"
+      }%}
+    </div>
   </div>
 
+  <div class="section section--teal padded--lg">
+    <div class="l-constrain l-constrain--narrow">
+      <h3 class="section__title section__title--white">Explore Other Films</h3>
+      <div class="flex-grid flex-grid--2-col">
+        {% for item in related_films %}
+          <div class="flex-column">
+            {% include "partials/card.twig" with {
+              image: item.thumbnail,
+              title: item.title,
+              url: item.link,
+              custom_class: "card--white"
+            }%}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+    
+  
 {% endblock %}

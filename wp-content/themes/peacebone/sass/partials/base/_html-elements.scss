@@ -54,6 +54,11 @@ h3 {
   font-family: $header-font;
   font-weight: 700;
   margin-top: 0;
+  font-size: $base-font-size;
+
+  @include breakpoint($bp-font-change) {
+    font-size: $font-size-med;
+  }
 }
 
 h4 {

@@ -1,7 +1,6 @@
 {% extends "base.twig" %}
 
 {% block content %}
-
   <div class="l-constrain l-constrain--narrow">
 
     {% include "partials/page-title.twig" with {
@@ -12,18 +11,28 @@
       subtitle: post.graphic_description
     }%}
 
-    <div class="gallery">
-      <div class="gallery__row">
-        {% for image in post.get_field('graphic_gallery') %}
+    <div class="section padded-top--med padded-bot--lg">
+      
+    </div>
+  </div>
+
+  <div class="section section--teal padded--lg">
+    <div class="l-constrain l-constrain--narrow">
+      <h3 class="section__title section__title--white">Explore Other Graphics</h3>
+      <div class="flex-grid flex-grid--2-col">
+        {% for item in related_graphics %}
           <div class="flex-column">
-            <div class="gallery__item" style="background-image: url({{ image.url|resize(450, 450) }})"></div>
+            {% include "partials/card.twig" with {
+              image: item.thumbnail,
+              title: item.title,
+              url: item.link,
+              custom_class: "card--white"
+            }%}
           </div>
         {% endfor %}
       </div>
     </div>
-    
   </div>
-
+    
   
-
 {% endblock %}
