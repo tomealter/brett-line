@@ -11,30 +11,25 @@
     {% include "partials/page-subtitle.twig" with {
       subtitle: post.photography_description
     }%}
-
-    <div class="section padded--med">
-      <div class="fancy-media">
-        <img src="{{ TimberImage(post.photography_featured_image).src }}" />
-      </div>
-      
-    </div>
-
-    <div class="gallery">
-      <div class="gallery__row">
-        {% for image in post.get_field('photography_gallery') %}
-          <div class="flex-column">
-            <div class="gallery__item" style="background-image: url({{ image.url|resize(450, 450) }})"></div>
-          </div>
-        {% endfor %}
-      </div>
-    </div>
     
   </div>
+
+  {# Gallery #}
+  <div class="section padded-top--med padded-bot--lg">
+    <div class="slider">
+      {% for image  in post.get_field('photography_gallery') %}
+        <div class="slider__item">
+          <img class="slider__image" src="{{ image.url }}"/>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  
 
   {# Explore other photos #}
   <div class="section section--teal padded--lg">
     <div class="l-constrain l-constrain--narrow">
-      <h3 class="section__title section__title--white">Explore Other Photographs</h3>
+      <h3 class="section__title section__title--white">You Might Also Enjoy</h3>
       <div class="flex-grid flex-grid--2-col">
         {% for item in related_photos %}
           <div class="flex-column">

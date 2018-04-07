@@ -14,6 +14,11 @@
     margin-bottom: 1em;
     max-width: 100%;
 
+    // Hide the first one since it's featured
+    &:first-child {
+      display: none;
+    }
+
     @include breakpoint(350px) {
       flex-basis: 50%;
       max-width: 50%;

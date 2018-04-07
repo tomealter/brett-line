@@ -1,6 +1,26 @@
 // Custom scripts file
 
-(function ($) {
+jQuery(document).ready(function ($) {
+
+  'use strict';
+
+  // Generic function that runs on window resize.
+  function resizeStuff() {
+    slider();
+  }
+
+
+  // Runs function once on window resize.
+  var TO = false;
+  $(window).resize(function () {
+    if (TO !== false) {
+      clearTimeout(TO);
+    }
+
+    // 200 is time in miliseconds.
+    TO = setTimeout(resizeStuff, 200);
+  }).resize();
+
 
   // Main Menu Toggle
   var menuButton = $('.main-menu-button');
@@ -33,6 +53,27 @@
     })
     .addTo(controller);
   }
+
+  // Slider Gallery
+  var slider = function() {
+    $('.slider').slick({
+      infinite: true,
+      speed: 300,
+      slidesToShow: 1,
+      centerMode: true,
+      variableWidth: true,
+      responsive: [
+        {
+          breakpoint: 700,
+          settings: "unslick"
+        }
+      ]
+    });
+  }
+  
+  slider();
+
+  
 
 
 })(jQuery);

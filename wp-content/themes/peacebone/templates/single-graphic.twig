@@ -10,12 +10,20 @@
     {% include "partials/page-subtitle.twig" with {
       subtitle: post.graphic_description
     }%}
+  </div>
 
-    <div class="section padded-top--med padded-bot--lg">
-      
+  {# Gallery #}
+  <div class="section padded-top--med padded-bot--lg">
+    <div class="slider">
+      {% for image  in post.get_field('graphic_gallery') %}
+        <div class="slider__item">
+          <img class="slider__image" src="{{ image.url }}"/>
+        </div>
+      {% endfor %}
     </div>
   </div>
 
+  {# Other Graphics #}
   <div class="section section--teal padded--lg">
     <div class="l-constrain l-constrain--narrow">
       <h3 class="section__title section__title--white">Explore Other Graphics</h3>
