@@ -1,10 +1,9 @@
 <div class="main-menu">
   <div class="main-menu__left">
     <nav class="nav nav--main">
-      <a href="#" class="nav__link">HOME</a>
-      <a href="#" class="nav__link">FILM</a>
-      <a href="#" class="nav__link">PHOTOGRAPHY</a>
-      <a href="#" class="nav__link">GRAPHICS</a>
+      {% for item in main_menu.items %}
+        <a href="{{ item.link }}" class="nav__link">{{ item.title }}</a>
+      {% endfor %}
     </nav>
     <nav class="nav nav--social">
       <a href="#" class="nav__link facebook"></a>

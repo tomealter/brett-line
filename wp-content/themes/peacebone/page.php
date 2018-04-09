@@ -25,10 +25,53 @@ $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
 
+// Context for photography post type
 $photography_args = array(
-  'post_type' => 'photo'
-  //'orderby' => 'ASC'
+  'post_type' => 'photo',
+  'orderby' => 'ASC'
 );
 $context['photography'] = Timber::get_posts( $photography_args );
+
+// Context for film post type
+$film_args = array(
+  'post_type' => 'film',
+  'orderby' => 'ASC'
+);
+$context['film'] = Timber::get_posts( $film_args );
+
+// Context for film post type
+$graphics_args = array(
+  'post_type' => 'graphic',
+  'orderby' => 'ASC'
+);
+$context['graphics'] = Timber::get_posts( $graphics_args );
+
+// Query featured media posts
+
+$context['featured_film'] = Timber::get_posts( 
+  array(
+    'post_type'   		=> 'film',
+    'posts_per_page' 	=> 1,
+    'cat'             => 'featured'
+  )
+);
+
+$context['featured_graphic'] = Timber::get_posts( 
+  array(
+    'post_type'   		=> 'graphic',
+    'posts_per_page' 	=> 1,
+    'cat'             => 'featured'
+  )
+);
+
+$context['featured_photography'] = Timber::get_posts( 
+  array(
+    'post_type'   		=> 'photo',
+    'posts_per_page' 	=> 1,
+    'cat'             => 'featured'
+  )
+);
+
+
 
 Timber::render( array( 'page-' . $post->post_name . '.twig', 'page.twig' ), $context );

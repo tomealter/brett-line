@@ -13,5 +13,12 @@
     font-size: 40px;
     font-weight: 700;
     pointer-events: initial;
+    text-transform: uppercase;
+    transition: all 250ms ease-in-out;
+
+    &:hover {
+      color: $teal;
+      transform: translateX(-10px);
+    }
   }
 }

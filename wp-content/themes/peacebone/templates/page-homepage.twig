@@ -17,27 +17,38 @@
 
   {# Stacked Cards #}
   <div class="l-constrain">
-    {% include "partials/featured-work.twig" with {
-      title: "Vivamus Magna Justo",
-      description: "Sed porttitor lectus nibh. Donec rutrum congue leo eget malesuada. Cras ultricies ligula sed magna dictum porta.",
-      media_type: "Film",
-      image: "http://picsum.photos/900/540"
-    }%}
+  
+    {% for item in featured_film %}
+      {% include "partials/featured-work.twig" with {
+        title: item.title,
+        description: item.film_description|truncate(20, true, '.......'),
+        media_type: "Film",
+        image: item.thumbnail,
+        url: item.link
+      }%}
+    {% endfor %}
 
-    {% include "partials/featured-work.twig" with {
-      custom_classes: "is-reversed",
-      title: "Cras Ultricies Ligula sed Magna",
-      description: "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Sed porttitor lectus nibh.",
-      media_type: "Photography",
-      image: "http://picsum.photos/900/541"
-    }%}
+    {% for item in featured_graphic %}
+      {% include "partials/featured-work.twig" with {
+        custom_classes: "is-reversed",
+        title: item.title,
+        description: item.graphic_description|truncate(20, true, '.......'),
+        media_type: "Graphic",
+        image: item.thumbnail,
+        url: item.link
+      }%}
+    {% endfor %}
 
-    {% include "partials/featured-work.twig" with {
-      title: "Quisque Velit nisi Pretium",
-      description: "Donec rutrum congue leo eget malesuada. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.",
-      media_type: "Graphic",
-      image: "http://picsum.photos/900/542"
-    }%}
+    {% for item in featured_photography %}
+      {% include "partials/featured-work.twig" with {
+        title: item.title,
+        description: item.photography_description|truncate(20, true, '.......'),
+        media_type: "Photography",
+        image: item.thumbnail,
+        url: item.link
+      }%}
+    {% endfor %}
+    
   </div>
 
 {% endblock %}

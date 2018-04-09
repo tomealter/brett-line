@@ -1,5 +1,6 @@
 .card {
   box-sizing: border-box;
+  border: solid 4px $teal;
   cursor: pointer;
   height: 0;
   margin-bottom: 1em;
@@ -60,20 +61,20 @@
 }
 
 .card__borders {
-  border: solid 1px $grey-med;
+  border: solid 1px $teal;
   box-sizing: border-box;
   display: block;
-  height: 100%;
-  left: 0;
+  height: calc(100% + 8px);
+  left: -4px;
   opacity: 0;
   position: absolute;
-  top: 0;
+  top: -4px;
   transition: all 250ms ease-in-out;
-  width: 100%;
+  width: calc(100% + 8px);
   z-index: -1;
   
   &:after {
-    border: solid 1px $grey-med;
+    border: solid 1px $teal;
     box-sizing: border-box;
     content: '';
     display: block;
@@ -110,25 +111,9 @@
 
   .card__borders {
     border-color: #fff;
-    width: calc(100% + 8px);
-    height: calc(100% + 8px);
-    top: -4px;
-    left: -4px;
 
     &:after {
       border-color: #fff;
-    }
-  }
-
-  &:hover {
-    .card__borders {
-      opacity: 1;
-      transform: translate(-10px, -10px);
-      
-      &:after {
-        opacity: 1;
-        transform: translate(21px, 21px);
-      }
     }
   }
 }
