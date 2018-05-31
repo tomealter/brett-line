@@ -45,31 +45,5 @@ $bp-footer: 700px;
   }
 }
 
-.footer__nav {
-  display: flex;
-  justify-content: center;
-  position: relative;
 
-  @include breakpoint($bp-footer) {
-    justify-content: flex-end;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  .nav__item {
-    display: block;
-    height: 40px;
-    margin-right: 5px;
-    transition: all 250ms ease-in-out;
-    width: 40px;
-
-    &:last-child {
-      margin-right: 0;
-    }
-
-    &:hover {
-      opacity: .5;
-    }
-  }
-}
 

@@ -1,0 +1,5 @@
+<nav class="nav nav--social">
+  {% for item in social_menu.items %}
+    <a href="{{ item.link }}" class="nav__link {{ item.title }}">{{ item.title }}</a>
+  {% endfor %}
+</nav>

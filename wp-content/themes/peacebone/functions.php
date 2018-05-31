@@ -41,7 +41,9 @@ class StarterSite extends TimberSite {
 		$context['stuff'] = 'I am a value set in your functions.php file';
 		$context['notes'] = 'These values are available everytime you call Timber::get_context();';
 		$context['main_menu'] = new TimberMenu('main');
+		$context['social_menu'] = new TimberMenu('social');
 		$context['site'] = $this;
+		$context['options'] = get_fields('options');
 
 		return $context;
 	}
@@ -80,3 +82,18 @@ function add_theme_scripts() {
 add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
 
 new StarterSite();
+
+add_filter('wp_nav_menu_items', 'my_wp_nav_menu_items', 10, 2);
+
+
+// Add options page fields
+if( function_exists('acf_add_options_page') ) {
+	acf_add_options_page();
+}
+
+add_filter( 'timber_context', 'peacebone_timber_context'  );
+
+function peacebone_timber_context( $context ) {
+  $context['options'] = get_fields('option');
+  return $context;
+}

@@ -1,9 +1,9 @@
 {
-    "key": "group_5ac9a0256ad9a",
-    "title": "Main Menu",
+    "key": "group_5b0f5a7df238a",
+    "title": "Global Options",
     "fields": [
         {
-            "key": "field_5ac9a032bdbd7",
+            "key": "field_5b0f5a95ca3be",
             "label": "Menu Image",
             "name": "menu_image",
             "type": "image",
@@ -30,9 +30,9 @@
     "location": [
         [
             {
-                "param": "nav_menu",
+                "param": "options_page",
                 "operator": "==",
-                "value": "3"
+                "value": "acf-options"
             }
         ]
     ],
@@ -41,8 +41,24 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "permalink",
+        "the_content",
+        "excerpt",
+        "custom_fields",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "page_attributes",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
     "active": 1,
     "description": "",
-    "modified": 1523163233
+    "modified": 1527734307
 }

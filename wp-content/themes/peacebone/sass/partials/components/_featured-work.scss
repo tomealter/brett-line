@@ -4,150 +4,182 @@ $bp-featured-work: 1000px;
   margin-bottom: $spacing-xl;
   position: relative;
   width: 100%;
+}
 
-  .featured-work__media {
+.featured-work__media {
+  display: block;
+  margin-bottom: $spacing-med;
+  position: relative;
+  width: calc(100% - 18px);
+  z-index: 1;
+  
+  &:after {
+    border: solid 1px $grey-light;
+    content: '';
     display: block;
-    margin-bottom: $spacing-med;
-    position: relative;
-    width: calc(100% - 18px);
+    height: 100%;
+    left: 38px;
+    position: absolute;
+    top: 18px;
+    width: calc(100% - 20px);
+    z-index: 2;
+  }
+
+  @include pseudoblock(before, block) {
+    background-color: $teal;
+    height: 100%;
+    left: 0;
+    opacity: .3;
+    position: absolute;
+    top: 0;
+    width: 100%;
     z-index: 1;
-    
-    &:after {
+  }
+
+  @include breakpoint($bp-featured-work) {
+    width: 90%;
+    margin-bottom: 0;
+  }
+}
+
+.featured-work__image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+  height: 0;
+  padding-top: 56.25%;
+  width: 100%;
+}
+
+.featured-work__content {
+  background-color: #fff;
+  position: relative;
+  transition: all 400ms ease-out;
+  z-index: 2;
+
+  @include breakpoint($bp-featured-work) {
+    bottom: -50px;
+    padding: 1.5em 2em 2em 2em;
+    position: absolute;
+    right: 0;
+    width: 400px;
+
+    &:before {
       border: solid 1px $grey-light;
       content: '';
       display: block;
       height: 100%;
-      left: 38px;
-      position: absolute;
-      top: 18px;
-      width: calc(100% - 20px);
-      z-index: 2;
-    }
-
-    @include pseudoblock(before, block) {
-      background-color: $teal;
-      height: 100%;
       left: 0;
-      opacity: .3;
+      pointer-events: none;
       position: absolute;
       top: 0;
+      transition: all 400ms ease-out;
       width: 100%;
       z-index: 1;
     }
+    
+    &:after {
+      background-color: #fff;
+      content: '';
+      display: block;
+      height: 100%;
+      left: -20px;
+      position: absolute;
+      top: -20px;
+      transition: all 1s ease-out;
+      width: 100%;
+      z-index: -1;
+    }
 
-    @include breakpoint($bp-featured-work) {
-      width: 90%;
-      margin-bottom: 0;
+    &:hover {
+      &:before {
+        border: solid 1px $teal;
+      }
+
+      &:after {
+        transform: scale(1.05);
+      }
+
+      .button {
+        border-color: $teal;
+        color: $teal;
+        &:hover {
+          color: #ffffff;
+        }
+      }
     }
   }
+}
 
-  .featured-work__image {
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: block;
-    height: 0;
-    padding-top: 56.25%;
+.featured-work__title {
+  font-size: $font-size-med;
+  font-weight: 700;
+  margin-bottom: .4em;
+  margin-top: 0;  
+
+  @include pseudoblock(after, block) {
+    width: 100px;
+    height: 2px;
+    background-color: $teal;
+    margin: 18px 0;
+  }
+
+  @include breakpoint(700px) {
+    font-size: $font-size-lg;
+  }
+}
+
+.featured-work__description {
+  color: $grey-dark;
+  line-height: 1.6;
+  margin-bottom: 1.6em;
+}
+
+.featured-work__media-type {
+  color: #ffffff;
+  display: block;
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  font-style: italic;
+  left: -55px;
+  position: absolute;
+  text-align: right;
+  top: 90px;
+  transform: rotate(-90deg);
+  width: 150px;
+  z-index: 2;
+}
+
+.featured-work__listing-link {
+  bottom: -50px;
+  color: $grey-med;
+  font-size: 18px;
+  font-weight: 200;
+  position: absolute;
+  text-decoration: none;
+  transition: all 250ms ease-in-out;
+
+  @include pseudoblock(after, block) {
+    background-color: $teal;
+    height: 1px;
+    left: -20px;
+    opacity: 0;
+    position: absolute;
+    transition: all 200ms ease-in-out;
     width: 100%;
   }
 
-  .featured-work__content {
-    background-color: #fff;
-    position: relative;
-    transition: all 400ms ease-out;
-    z-index: 2;
-
-    @include breakpoint($bp-featured-work) {
-      bottom: -50px;
-      padding: 1.5em 2em 2em 2em;
-      position: absolute;
-      right: 0;
-      width: 400px;
-
-      &:before {
-        border: solid 1px $grey-light;
-        content: '';
-        display: block;
-        height: 100%;
-        left: 0;
-        pointer-events: none;
-        position: absolute;
-        top: 0;
-        transition: all 400ms ease-out;
-        width: 100%;
-        z-index: 1;
-      }
-      
-      &:after {
-        background-color: #fff;
-        content: '';
-        display: block;
-        height: 100%;
-        left: -20px;
-        position: absolute;
-        top: -20px;
-        transition: all 1s ease-out;
-        width: 100%;
-        z-index: -1;
-      }
-
-      &:hover {
-        &:before {
-          border: solid 1px $teal;
-        }
-
-        &:after {
-          transform: scale(1.05);
-        }
-
-        .button {
-          border-color: $teal;
-          color: $teal;
-          &:hover {
-            color: #ffffff;
-          }
-        }
-      }
-    }
+  @include breakpoint($bp-featured-work) {
+    left: 45px;
   }
 
-  .featured-work__title {
-    font-size: $font-size-med;
-    font-weight: 700;
-    margin-bottom: .4em;
-    margin-top: 0;  
-
-    @include pseudoblock(after, block) {
-      width: 100px;
-      height: 2px;
-      background-color: $teal;
-      margin: 18px 0;
+  &:hover {
+    color: $teal;
+    &:after {
+      left: 0;
+      opacity: 1;
     }
-
-    @include breakpoint(700px) {
-      font-size: $font-size-lg;
-    }
-  }
-
-  .featured-work__description {
-    color: $grey-dark;
-    line-height: 1.6;
-    margin-bottom: 1.6em;
-  }
-
-  .featured-work__media-type {
-    color: #ffffff;
-    display: block;
-    font-family: "Playfair Display", serif;
-    font-size: 20px;
-    font-style: italic;
-    left: -55px;
-    position: absolute;
-    text-align: right;
-    top: 90px;
-    transform: rotate(-90deg);
-    width: 150px;
-    z-index: 2;
   }
 }
 
@@ -180,6 +212,13 @@ $bp-featured-work: 1000px;
         text-align: left;
         transform: rotate(90deg) translate(50%, -100%);
         top: 15px;
+      }
+
+      .featured-work__listing-link {
+        @include breakpoint($bp-featured-work) {
+          left: initial;
+          right: 45px;
+        }
       }
     }
   }
