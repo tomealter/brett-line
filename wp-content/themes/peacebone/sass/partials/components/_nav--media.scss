@@ -1,4 +1,4 @@
-$bp-nav-media: 600px;
+$bp-nav-media: 800px;
 
 .nav--media {
   align-content: center;
@@ -8,7 +8,7 @@ $bp-nav-media: 600px;
   justify-content: center;
   margin: $spacing-lg 0;
 
-  @include breakpoint(600px) {
+  @include breakpoint($bp-nav-media) {
     margin: $spacing-xl 0;
   }
 
@@ -24,7 +24,7 @@ $bp-nav-media: 600px;
     text-align: center;
     text-decoration: none;
 
-    @include breakpoint(360px) {
+    @include breakpoint(500px) {
       flex-basis: auto;
       max-width: auto;
       text-align: left;
@@ -37,7 +37,7 @@ $bp-nav-media: 600px;
 
     &:first-child {
 
-      @include breakpoint(360px) {
+      @include breakpoint(500px) {
         border-right: solid 1px $teal;
         margin-right: .5em;
         padding-right: .5em;
@@ -51,12 +51,13 @@ $bp-nav-media: 600px;
         width: 10px;
         height: 24px;
         margin-right: 20px;
-        opacity: 0;
+        opacity: 1;
         transition: all 500ms ease-out;
 
         @include breakpoint($bp-nav-media) {
           height: 36px;
           width: 14px;
+          opacity: 0;
         }
       }
 
@@ -82,13 +83,14 @@ $bp-nav-media: 600px;
         background-size: contain;
         height: 24px;
         margin-left: 20px;
-        opacity: 0;
+        opacity: 1;
         transition: all 500ms ease-out;
         width: 10px;
 
         @include breakpoint($bp-nav-media) {
           height: 36px;
           width: 14px;
+          opacity: 0;
         }
       }
 
