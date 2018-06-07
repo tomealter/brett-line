@@ -1,5 +1,6 @@
+$bp-main-menu: 800px;
+
 .main-menu {
-  display: flex;
   height: 100%;
   left: 0;
   overflow: hidden;
@@ -11,9 +12,19 @@
 
   &.is-active {
 
-    .main-menu__left,
-    .main-menu__right {
+    .main-menu__left {
       transform: translateX(0);
+    }
+  }
+
+  @include breakpoint($bp-main-menu) {
+    display: flex;
+
+    &.is-active {
+      .main-menu__left,
+      .main-menu__right {
+        transform: translateX(0);
+      }
     }
   }
 }
@@ -23,11 +34,15 @@
   display: block;
   flex-basis: 45%;
   height: 100%;
-  max-width: 45%;
+  max-width: 100%;
   padding: 0 20px;
   position: relative;
   transform: translateX(-100%);
   transition: all 350ms ease-out;
+
+  @include breakpoint($bp-main-menu) {
+    max-width: 45%;
+  }
 }
 
 .main-menu__right {

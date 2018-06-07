@@ -2,6 +2,8 @@
   display: flex;
   justify-content: center;
   position: relative;
+  pointer-events: visible;
+  z-index: 2;
 
   @include breakpoint($bp-footer) {
     justify-content: flex-end;
@@ -21,6 +23,27 @@
 
     &:hover {
       opacity: .5;
+    }
+
+    .main-menu & {
+      opacity: .5;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  .main-menu & {
+    margin-top: 1rem;
+    top: inherit;
+    transform: inherit;
+    justify-content: center;
+
+    @include breakpoint(800px) {
+      justify-content: flex-start;
+      position: absolute;
+      bottom: 1rem;
     }
   }
 }

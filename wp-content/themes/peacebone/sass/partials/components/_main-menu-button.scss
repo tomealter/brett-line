@@ -12,14 +12,22 @@
   z-index: 9;
 
   &.is-active {
-    @include svg-background(close);
+    @include svg-background(close-teal);
+
+    @include breakpoint(800px) {
+      @include svg-background(close);
+    }
   }
 
   &.is-white {
     @include svg-background(hamburger);
 
     &.is-active {
-      @include svg-background(close);
+      @include svg-background(close-teal);
+
+      @include breakpoint(800px) {
+        @include svg-background(close);
+      }
     }
   }
 }

@@ -5,13 +5,7 @@
         <a href="{{ item.link }}" class="nav__link">{{ item.title }}</a>
       {% endfor %}
     </nav>
-    <nav class="nav nav--social">
-      <a href="#" class="nav__link facebook"></a>
-      <a href="#" class="nav__link twitter"></a>
-      <a href="#" class="nav__link linkedin"></a>
-      <a href="#" class="nav__link vimeo"></a>
-      <a href="#" class="nav__link youtube"></a>
-    </nav>
+    {% include "partials/social-menu.twig" %}
   </div>
   <div class="main-menu__right" style="background-image: url({{ image }});">
     <div class="main-menu__logo"></div>

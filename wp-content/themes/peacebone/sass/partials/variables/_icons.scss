@@ -8,5 +8,9 @@ $social-media-list: "facebook", "twitter", "linkedin", "vimeo", "youtube";
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
+
+    .main-menu & {
+      @include svg-background(social-#{$social-media}-teal);
+    }
   }
 }
